@@ -1,0 +1,44 @@
+<div class="modal-backdrop">
+  <div class="modal-content animate-fade-in">
+    <h2>Select Your Plan</h2>
+
+    <!-- Scrollable wrapper for plan columns -->
+    <div class="plans-scroll-wrapper">
+      <div class="plan-table">
+        <!-- Each plan column -->
+        <div
+          class="plan-column"
+          *ngFor="let size of accountSizes; let i = index"
+          (click)="selectPlan(size)"
+          [class.selected]="selectedSize === size"
+        >
+          <div class="plan-header">
+            <div class="account-size">{{ size }}</div>
+            <div class="fee">Fee: {{ getFee(size) }}</div>
+          </div>
+
+          <!-- Plan rows -->
+          <div
+            class="plan-body"
+            *ngIf="plans && plans[marketType] && plans[marketType][evaluationType]"
+          >
+            <div
+              *ngFor="let row of plans[marketType][evaluationType]"
+              [class.hidden]="row.isFee"
+              class="plan-row"
+            >
+              <div class="row-label">{{ row.label }}</div>
+              <div class="row-value" [innerHTML]="row.values[i]"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal action buttons -->
+    <div class="modal-actions">
+      <button (click)="closeModal()" class="buy-button">Close</button>
+      <button (click)="closeModal()" class="buy-button"><a href="https://proptradinglivedashboard.propaccount.com/en/challenges">Buy</a></button>
+    </div>
+  </div>
+</div>

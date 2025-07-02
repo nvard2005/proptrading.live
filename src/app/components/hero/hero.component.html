@@ -1,0 +1,245 @@
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>REVOLUTIONIZING <br> THE WAY YOU TRADE</h1>
+
+      <div class="features-grid">
+        <div class="feature-box">
+          <p>High Profit Splits</p>
+        </div>
+        <div class="feature-box">
+      
+          <p>Flexible Entry Options</p>
+        </div>
+        <div class="feature-box">
+                   <p>No Time Limit</p>
+        </div>
+        <div class="feature-box">
+          <p>Multiple Trading Platforms</p>
+</div>
+      </div>
+    <div class="cta-buttons">
+      <a href="https://proptradinglivedashboard.propaccount.com/en/challenges" class="cta-button">Start Trading Now</a>
+
+    </div>
+  </div>
+</section>
+<!-- Floating Buttons -->
+<div class="chat-buttons">
+  <button class="chat-btn telegram" (click)="openChatPopup('telegram')">
+    <img src="assets/telegram.png" alt="Telegram" />
+  </button>
+  <button class="chat-btn whatsapp" (click)="openChatPopup('whatsapp')">
+    <img src="assets/whatsapp.png" alt="WhatsApp" />
+  </button>
+</div>
+
+<!-- Mini Dialog Popup -->
+<div class="chat-popup" *ngIf="isPopupVisible">
+  <div class="chat-header">
+    <div class="logo">
+      <img class="logoofstartchat" src="assets/logoonly.svg" alt="PropTrade.Live" />
+      <span>PropTrading.Live</span>
+    </div>
+    <button (click)="closePopup()">x</button>
+  </div>
+  <div class="chat-body">
+    <p>Hi there 👋</p>
+    <p>How can we help you?</p>
+    <button class="start-chat-btn" (click)="startChat()">Start Chat</button>
+  </div>
+</div>
+      <section class="services" id="about">
+          <h2>Our Mission</h2>
+          <p class="mission-description">
+            Welcome to <strong>Proptrading.live</strong>, where we empower traders with the resources, support, and opportunities needed to navigate the markets and achieve sustained success.
+          </p>
+        
+          <div class="service-list">
+            <div class="service-item">
+         
+              <h3>Build Confidence</h3>
+              <p>
+                We believe confidence is the foundation of every successful trader. That’s why we provide the tools, support, and environment needed to help you trade boldly and grow consistently.
+              </p>
+            </div>
+        
+            <div class="service-item">
+            
+              <h3>Reach Success</h3>
+              <p>
+                Success in trading is shaped by resilience, strategy, and the right support. We empower traders to overcome challenges and seize every opportunity to reach their full potential.
+              </p>
+            </div>
+          </div>
+        
+   
+        
+      <section class="reviews-section" id="reviews">
+        <h2 class="section-title">What Our Traders Say</h2>
+        <div class="review-cards">
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="Alex M." class="review-img" />
+            <h3>Alex M.</h3>
+            <p class="role">Full-Time Trader</p>
+            <div class="stars">★★★★☆</div>
+            <p class="review-text">PropTrading.live gave me the boost I needed. Their support is unmatched and the process was smooth from start to finish.</p>
+          </div>
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="Sarah L." class="review-img" />
+            <h3>Sarah L.</h3>
+            <p class="role">Forex Enthusiast</p>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">I passed my challenge on the first try thanks to the clear rules and fast feedback. Highly recommended!</p>
+          </div>
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="James T." class="review-img" />
+            <h3>James T.</h3>
+            <p class="role">Day Trader</p>
+            <div class="stars">★★★★☆</div>
+            <p class="review-text">Reliable, professional, and user-friendly. The dashboard is clean and everything just works perfectly.</p>
+          </div>
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="Emily R." class="review-img" />
+            <h3>Emily R.</h3>
+            <p class="role">Crypto Swing Trader</p>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">The best funded account platform I've used. Quick withdrawals and no hidden rules. I love it here!</p>
+          </div>
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="Daniel K." class="review-img" />
+            <h3>Daniel K.</h3>
+            <p class="role">Scalper</p>
+            <div class="stars">★★★☆☆</div>
+            <p class="review-text">Some minor lags on peak hours, but overall it’s solid. The customer service team really listens and responds fast.</p>
+          </div>
+    
+          <div class="review-card">
+            <img src="assets/iconofperson.png" alt="Linda G." class="review-img" />
+            <h3>Linda G.</h3>
+            <p class="role">Funded Trader</p>
+            <div class="stars">★★★★★</div>
+            <p class="review-text">I never thought I’d get funded this quickly. Their rules are fair and payouts are fast. Best decision I made!</p>
+          </div>
+    
+        </div>
+      </section>
+    </section>
+    
+    <div class="market-plan">
+      <div class="header">
+        <p><strong>Market Type: </strong>
+          <button [class.active]="marketType === 'crypto'" (click)="selectMarket('crypto')">Crypto</button>
+          <button [class.active]="marketType === 'instant'" (click)="selectMarket('instant')">Instant Funding</button>
+          <button [class.active]="marketType === 'fxced'" (click)="selectMarket('fxced')">FX/CFD</button>
+        </p>
+        <p *ngIf="marketType !== 'instant'"><strong>Evaluation Type:  </strong>
+  <button 
+    [class.active]="evaluationType === '1-step'" 
+    (click)="selectEvaluation('1-step')">1-step</button>
+  <button class="2st"
+    [class.active]="evaluationType === '2-step'" 
+    (click)="selectEvaluation('2-step')">2-step</button>
+</p>
+      </div>
+    
+      <section class="challenge" id="challenge">
+        <div class="responsive-scroll">
+          <div class="cards-container table-wrapper"
+          [ngClass]="[
+          getTableWrapperClass(), 
+          getEvaluationClass(),
+          marketType, 
+          evaluationType === '2-step' ? 'two-step' : 'one-step'
+        ]"
+        >
+            <div class="account-header">
+              <div class="title">Account size</div>
+              
+              <!-- Only include $100,000 in Instant Funding plans -->
+              <div *ngFor="let size of accountSizes" class="card-header">
+                <div class="account-size">{{ size }}</div>
+                <div class="fee">Fee: {{ getFee(size) }}</div>
+              </div>
+            </div>
+    
+            <div class="card-row" *ngFor="let row of plans[marketType]?.[evaluationType]" [class.hidden]="row.isFee">
+              <div class="row-title">{{ row.label }}</div>
+              <div *ngFor="let val of row.values" class="row-value" [innerHTML]="val"></div>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+        
+
+<button class="buy-button" (click)="openPlanModal()">Get Started</button>
+
+<app-select-plan 
+  *ngIf="isModalVisible" 
+  [marketType]="marketType"
+  [evaluationType]="evaluationType"
+  [plans]="plans"
+  [accountSizes]="accountSizes"
+  (close)="isModalVisible = false"
+  (evaluationChanged)="selectEvaluation($event)">
+</app-select-plan>
+
+
+<div class="faq-container" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div
+    class="faq-item"
+    *ngFor="let faq of faqs[marketType][evaluationType]; let i = index"
+  >
+    <div class="faq-question" (click)="toggleAnswer(i)">
+      {{ faq.question }}
+      <span class="arrow" [class.rotate]="activeIndex === i">&#9662;</span>
+    </div>
+    <div class="faq-answer" [class.active]="activeIndex === i">
+      {{ faq.answer }}
+    </div>
+  </div>
+</div>
+
+
+<div class="contact-section" id="contact">
+
+    <h3>Got Questions? We're Here <span>24/7</span></h3>
+    <div class="contact-container">
+    <div class="contact-left">    <h2>Get in Touch</h2>
+       <div class="contact-details">
+        <p><i class="fas fa-envelope"></i>Email:support&#64;proptrading.live</p>
+        <p><i class="fas fa-paper-plane"></i> <a href="https://t.me/PropTrade0" target="_blank">https://t.me/proptradinglive</a></p>
+        <!-- <p><i class="fa fa-phone"></i> Phone: +(374) 41 070-914</p> -->
+              </div>
+    </div>
+<div class="newsletter">
+  <h3>Stay Connected with PropTrading.live</h3>
+  <p>
+    📩 <a href="https://proptrading.aweb.page/p/968553b8-518c-4f8b-8161-33774a1819cc" target="_blank">
+      Subscribe to our official newsletter for updates, insights & more.
+    </a>
+  </p>
+</div>
+   <div class="contact-right">
+  <h3>Send a Message</h3>
+  <form (submit)="sendEmail($event)" #contactForm="ngForm">
+    <input type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required />
+    <input type="email" placeholder="Your Email" [(ngModel)]="email" name="email" required />
+    <textarea placeholder="Your Message" [(ngModel)]="message" name="message" required></textarea>
+    <button type="submit" [disabled]="!contactForm.form.valid">SEND</button>
+  </form>
+</div>
+  </div>
+</div>
+
+
+
+
+
+

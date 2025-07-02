@@ -1,0 +1,46 @@
+<div class="signup-wrapper">
+    <form (ngSubmit)="onSignup()" #signupForm="ngForm">
+      <img src="/assets/logoonly.svg" alt="Logo" class="logo" />
+      <h1>Create Your Account</h1>
+  
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="name"
+        placeholder="Full Name"
+        required
+      />
+  
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Email"
+        required
+      />
+  
+      <input
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Password"
+        required
+      />
+  
+      <input
+        type="password"
+        name="confirmPassword"
+        [(ngModel)]="confirmPassword"
+        placeholder="Confirm Password"
+        required
+      />
+  
+      <button type="submit">Sign Up</button>
+  
+      <p class="login-link">
+        Already have an account?
+        <a routerLink="/login">Login here</a>
+      </p>
+    </form>
+  </div>
+  

@@ -1,0 +1,21 @@
+/* src/app/footer/footer.component.css */
+.footer {
+    padding: 10px 10px;
+    background-color: #200036; 
+    color: white;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #0071e3;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  .note{
+    color: rgba(255, 255, 255, 0.2);
+    transition: color 0.3sease-in-out;
+    margin-top: 3px;
+  }

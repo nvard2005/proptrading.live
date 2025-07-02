@@ -1,0 +1,43 @@
+<div>
+  <form (ngSubmit)="onLogin()" #loginForm="ngForm">
+    <img src="/assets/logoonly.svg" alt="Logo" class="logo" />
+
+    <h1>PropTrade.LIVE</h1>
+
+    <div class="input-wrapper">
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="email"
+        placeholder="Email"
+        required
+      />
+    </div>
+    
+    <!-- Password Field with Eye Toggle -->
+    <div class="input-wrapper">
+      <input
+        [type]="showPassword ? 'text' : 'password'"
+        name="password"
+        [(ngModel)]="password"
+        placeholder="Password"
+        required
+      />
+      <span class="toggle-password" (click)="showPassword = !showPassword">
+        <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+      </span>
+    </div>
+
+    <div class="form-links right-align">
+      <a href="#" class="forgot-link">Forgot Password?</a>
+    </div>
+
+    <button type="submit">Login</button>
+
+    <div class="form-links">
+      <button type="button" class="signup-button" routerLink="/signup">
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>

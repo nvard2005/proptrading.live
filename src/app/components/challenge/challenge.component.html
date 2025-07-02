@@ -1,0 +1,45 @@
+<div class="market-plan">
+  <div class="header">
+    <p><strong>Market Type:</strong> <span class="badge">Crypto</span></p>
+    <p><strong>Evaluation Type:</strong>
+      <button [class.active]="evaluationType === '1-step'" (click)="selectEvaluation('1-step')">1-step</button>
+      <button [class.active]="evaluationType === '2-step'" (click)="selectEvaluation('2-step')">2-step</button>
+    </p>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Account size</th>
+          <th *ngFor="let size of accountSizes">{{ size }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of plans[evaluationType]">
+          <td>{{ row.label }}</td>
+          <td *ngFor="let val of row.values" [class.fee]="row.isFee" [innerHTML]="val">
+            <ng-container *ngIf="isArray(val); else singleVal">
+              <div *ngFor="let subVal of val">{{ subVal }}</div>
+            </ng-container>
+            <ng-template #singleVal>{{ val }}</ng-template>
+          </td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="buy-button">Buy now</button>
+  <div class="faq-container">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item" *ngFor="let faq of faqs[evaluationType]; let i = index">
+      <div class="faq-question" (click)="toggleAnswer(i)">
+        {{ faq.question }}
+        <span class="arrow" [class.rotate]="activeIndex === i">&#9662;</span>
+      </div>
+      <div class="faq-answer" [class.active]="activeIndex === i">
+        {{ faq.answer }}
+      </div>
+    </div>
+  </div>
+</div>

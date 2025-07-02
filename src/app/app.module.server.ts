@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
-import { provideServerRoutesConfig } from '@angular/ssr';
-import { AppComponent } from './app.component';
-import { AppModule } from './app.module';
-import { serverRoutes } from './app.routes.server';
+import { AppModule } from './app.module'; // Import your main AppModule
 
 @NgModule({
-  imports: [AppModule, ServerModule],
-  providers: [provideServerRoutesConfig(serverRoutes)],
-  bootstrap: [AppComponent],
+  imports: [
+    AppModule,  // Import the regular app module here
+    ServerModule // Import Angular Universal server module
+  ]
 })
-export class AppServerModule {}
+export class AppServerModule {
+  // Explicitly bootstrap the AppComponent for server-side rendering
+  ngDoBootstrap() {
+    // No need for this method if using default bootstrap
+    // Angular will automatically bootstrap the AppComponent
+  }
+}

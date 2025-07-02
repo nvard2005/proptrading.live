@@ -1,0 +1,23 @@
+<header class="main-header">
+  <div class="container">
+
+    <div class="logo">
+      <img src="assets/logoonly.svg" alt="Logo" />
+      <!-- <h1 class="logo-title"> <a href="#hero">PropTrading.live</a></h1> -->
+        </div>
+
+    <nav class="nav-links" [class.open]="isMenuOpen">
+      <a href="#about" (click)="toggleMenu()">About</a>
+      <a href="#challenge" (click)="toggleMenu()">Challenge</a>
+      <a href="#faq" (click)="toggleMenu()">FAQ</a>
+       <a href="#contact" (click)="toggleMenu()">Contact</a>
+      
+      <div class="right-section">
+        <button class="login-btn" > <a href="https://proptradinglivedashboard.propaccount.com/en/sign-in">LOGIN</a></button>
+        <button class="login-btn"><a href="https://proptradinglivedashboard.propaccount.com/en/sign-up">SIGN UP</a></button>
+      
+      </div>
+    </nav>
+    <div class="menu-icon" (click)="toggleMenu()">&#9776;</div>
+  </div>
+</header>
